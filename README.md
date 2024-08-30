@@ -141,11 +141,3 @@ section.appendChild(para2);
 
 - Este proyecto no tiene dependencias externas. Utiliza JavaScript vanilla y la API Fetch incorporada en navegadores modernos.
 
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios mayores antes de hacer un pull request.
-
-## Licencia
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
