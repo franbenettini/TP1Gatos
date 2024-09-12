@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-  <meta charset="utf-8"/>
-  <title>JSON: Task 1</title>
-  <link rel="stylesheet" href="/style.css" />
+    <meta charset="utf-8" />
+    <title>JSON: Task 1</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Cat Information</h1>
-  <section class="preview"></section>
-
-  <script>
+    <h1>Cat Information</h1>
+    <section class="preview"></section>
+    <img src="img/pngwing.com.png" alt="Cats">
+</body>
+<script>
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
@@ -20,45 +23,24 @@
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
     fetch(requestURL)
-      .then(response => response.text())
-      .then(text => {
-          console.log("Data fetched:", text); // Verificar si se obtienen los datos
-          displayCatInfo(text);
-      })
-      .catch(error => console.error("Error fetching data:", error));
+        .then(response => response.text())
+        .then(response => JSON.parse(response))
+        .then(catResponseParsed => displayCatInfo(catResponseParsed))
 
-    function displayCatInfo(catString) {
-        console.log("Processing data...");
-
+    function displayCatInfo(cats) {
         let total = 0;
         let male = 0;
-        let female = 0;
-
-        const cats = JSON.parse(catString);
-
-        // Recorrer las madres gatas
+        let lengthCats = cats.length;
         cats.forEach((cat, index) => {
-            motherInfo += cat.name;
-            if (index < cats.length - 2) {
-                motherInfo += ', ';
-            } else if (index === cats.length - 2) {
-                motherInfo += ' y ';
-            } else {
-                motherInfo += '.';
-            }
-
-            // Recorrer los gatitos
+            motherInfo += (index === lengthCats - 1) ? " and " + cat.name + "." : " " + cat.name + ",";
             cat.kittens.forEach(kitten => {
-                total++;
-                if (kitten.gender === 'm') {
+                if (kitten.gender === "m")
                     male++;
-                } else if (kitten.gender === 'f') {
-                    female++;
-                }
-            });
+            })
+            total += cat.kittens.length;
         });
-
-        kittenInfo = `Total de gatitos: ${total}, Machos: ${male}, Hembras: ${female}`;
+        kittenInfo = "The total number of kittens is " + total + ", " + male + " are males and " + (total - male) + " are females."
+        // Don't edit the code below here!
 
         para1.textContent = motherInfo;
         para2.textContent = kittenInfo;
@@ -66,6 +48,8 @@
 
     section.appendChild(para1);
     section.appendChild(para2);
-  </script>
-</body>
+
+
+</script>
+
 </html>

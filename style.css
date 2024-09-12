@@ -1,26 +1,24 @@
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* Some default styling for cookbook examples */
-/*
-rgb(53,43,34)
-rgb(75,70,74)
-rgb(95,97,110)
-rgb(137,151,188)
-rgb(160,178,226)
-*/
+
 body {
-    background-color: #fff;
-    color: #333;
-    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
-    padding: 0;
-    margin: 0;
+  background-color: #fff;
+  color: #333;
+  font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
   font-size: 2rem;
   margin: 0;
+  text-align: center;
+  padding: 15px 0px 40px 0px;
 }
 
 h2 {
@@ -29,13 +27,36 @@ h2 {
 }
 
 p {
-    color: purple;
-    margin: 0.5em 0;
+  color: purple;
+  margin: 0.5em 0;
+  text-align: center;
 }
+
+.preview {
+  width: 90%;
+  max-width: 700px;
+  border: 1px solid #4D4E53;
+  border-radius: 2px;
+  padding: 10px 14px 10px 10px;
+  margin-bottom: 10px;
+  margin: 0 auto;
+}
+
+.preview input {
+  display: block;
+  margin: 5px;
+
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
 
 /* styles for the editor */
 
-.playable {
+/* .playable {
     font-family: monospace;
     display: block;
     margin-bottom: 10px;
@@ -63,18 +84,4 @@ p {
     max-width: 700px;
     padding: 5px 10px 5px 26px;
     font-size: 100%;
-  }
-
-  .preview {
-    width: 90%;
-    max-width: 700px;
-    border: 1px solid #4D4E53;
-    border-radius: 2px;
-    padding: 10px 14px 10px 10px;
-    margin-bottom: 10px;
-  }
-
-  .preview input {
-    display: block;
-    margin: 5px;
-  }
+  } */
