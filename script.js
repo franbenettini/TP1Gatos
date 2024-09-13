@@ -1,3 +1,7 @@
+const version = '1.0.0'
+console.log("Version", version);
+
+
 const section = document.querySelector('section');
 
 let para1 = document.createElement('p');
